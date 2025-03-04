@@ -1,0 +1,70 @@
+{
+  "id": "fr.veracrypt.VeraCrypt",
+  "runtime": "org.freedesktop.Platform",
+  "runtime-version": "24.08",
+  "sdk": "org.freedesktop.Sdk",
+  "finish-args": [
+    "--socket=fallback-x11",
+    "--socket=wayland",
+    "--device=dri",
+    "--socket=pcsc"
+  ],
+  "modules": [
+    "shared-modules/libappindicator/libappindicator-gtk3-12.10.json",
+    "shared-modules/libayatana-appindicator/libayatana-appindicator-gtk3.json",
+    {
+      "name": "pcsc-lite",
+      "sources": [
+        {
+          "type": "archive",
+          "url": "https://pcsclite.apdu.fr/files/pcsc-lite-1.9.9.tar.bz2",
+          "sha256": "cbcc3b34c61f53291cecc0d831423c94d437b188eb2b97b7febc08de1c914e8a"
+        }
+      ]
+    },
+    {
+      "name": "yasm",
+      "sources": [
+        {
+          "type": "archive",
+          "url": "https://www.tortall.net/projects/yasm/releases/yasm-1.3.0.tar.gz",
+          "sha256": "3dce6601b495f5b3d45b59f7d2492a340ee7e84b5beca17e48f862502bd5603f"
+        }
+      ]
+    },
+    "dependencies/libfuse.json",
+    {
+      "name": "veracrypt",
+      "buildsystem": "simple",
+      "build-options": {
+        "env": {
+          "WX_ROOT": "/run/build/veracrypt/wxWidgets-3.2.5",
+          "WX_BUILD_DIR": "/run/build/veracrypt/wxBuildGUI"
+        }
+      },
+      "build-commands": [
+        "cd src && make WXSTATIC=1 wxbuild",
+        "cd src && make WXSTATIC=1 INDICATOR=1",
+        "install -Dm 644 -t /app/share/applications veracrypt/src/Setup/Linux/veracrypt.desktop",
+        "install -Dm 644 -t /app/share/metainfo fr.veracrypt.veracrypt_testing.metainfo.xml"
+      ],
+      "sources": [
+        {
+          "type": "git",
+          "url": "https://github.com/veracrypt/VeraCrypt.git",
+          "tag": "VeraCrypt_1.26.20"
+        },
+        {
+          "type": "file",
+          "path": "fr.veracrypt.VeraCrypt.metainfo.xml"
+        },
+        {
+          "type": "archive",
+          "url": "https://github.com/wxWidgets/wxWidgets/releases/download/v3.2.5/wxWidgets-3.2.5.tar.bz2",
+          "sha256": "0ad86a3ad3e2e519b6a705248fc9226e3a09bbf069c6c692a02acf7c2d1c6b51",
+          "dest": "wxWidgets-3.2.5"
+        }
+      ]
+    }
+  ]
+}
