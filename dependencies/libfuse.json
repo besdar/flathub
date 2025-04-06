@@ -2,9 +2,16 @@
   "name": "libfuse",
   "config-opts": [
     "UDEV_RULES_PATH=/app/etc/udev/rules.d",
-    "INIT_D_PATH=/app/etc/init.d"
+    "INIT_D_PATH=/app/etc/init.d",
+    "--disable-util"
   ],
-  "cleanup": ["/bin/ulockmgr_server"],
+  "cleanup": [
+    "/include",
+    "/lib/pkgconfig",
+    "*.a",
+    "*.la",
+    "/lib/libulockmgr*"
+  ],
   "post-install": ["install -m a+rx fusermount-wrapper.sh /app/bin/fusermount"],
   "sources": [
     {
@@ -14,11 +21,11 @@
     },
     {
       "type": "patch",
-      "path": "fuse-2.9.2-namespace-conflict-fix.patch"
+      "path": "fuse-disable-sys-mount-under-flatpak.patch"
     },
     {
       "type": "patch",
-      "path": "fuse-disable-sys-mount-under-flatpak.patch"
+      "path": "fuse-2.9.2-namespace-conflict-fix.patch"
     },
     {
       "type": "patch",
