@@ -45,8 +45,8 @@
       "build-commands": [
         "cd src && make WXSTATIC=1 wxbuild",
         "cd src && make WXSTATIC=1 INDICATOR=1",
-        "install -Dm 644 -t /app/share/applications veracrypt/src/Setup/Linux/veracrypt.desktop",
-        "install -Dm 644 -t /app/share/metainfo fr.veracrypt.veracrypt_testing.metainfo.xml"
+        "install -Dm644 -t /app/share/applications veracrypt/src/Setup/Linux/veracrypt.desktop",
+        "install -Dm644 fr.veracrypt.VeraCrypt.metainfo.xml /app/share/metainfo/fr.veracrypt.VeraCrypt.metainfo.xml"
       ],
       "sources": [
         {
