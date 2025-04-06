@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <component type="desktop-application">
-  <id>fr.veracrypt.veracrypt_testing</id>
+  <id>fr.veracrypt.VeraCrypt</id>
   
-  <name>VeraCrypt-testing</name>
+  <name>VeraCrypt</name>
   <summary>Disk encryption with strong security based on TrueCrypt</summary>
   
   <metadata_license>MIT</metadata_license>
@@ -25,6 +25,4 @@
       Note that VeraCrypt never saves any decrypted data to a disk – it only stores them temporarily in RAM (memory). Even when the volume is mounted, data stored in the volume is still encrypted. When you restart your system or turn off your computer, the volume will be dismounted and files stored in it will be inaccessible (and encrypted). Even when power supply is suddenly interrupted (without proper system shut down), files stored in the volume are inaccessible (and encrypted). To make them accessible again, you have to mount the volume (and provide the correct password and/or keyfile).
     </p>
   </description>
-  
-  <launchable type="desktop-id">veracrypt.desktop</launchable>
 </component>
