@@ -52,7 +52,11 @@
         {
           "type": "git",
           "url": "https://github.com/veracrypt/VeraCrypt.git",
-          "tag": "VeraCrypt_1.26.20"
+          "tag": "VeraCrypt_1.26.20",
+          "x-checker-data": {
+            "type": "git",
+            "tag-pattern": "^VeraCrypt_([\\d.]+)$"
+          }
         },
         {
           "type": "file",
