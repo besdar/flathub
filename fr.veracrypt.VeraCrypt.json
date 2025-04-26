@@ -55,9 +55,9 @@
         "make WXSTATIC=1 wxbuild",
         "make WXSTATIC=1 INDICATOR=1",
         "install -Dm755 Main/veracrypt /app/bin/veracrypt",
-        "install -Dm644 Setup/Linux/veracrypt.desktop /app/share/applications/veracrypt.desktop",
-        "mkdir -p /app/share/icons/hicolor/scalable/apps",
+        "mkdir -p /app/share/icons/hicolor/256x256/scalable/apps",
         "install -Dm644 Resources/Icons/VeraCrypt-256x256.xpm /app/share/icons/hicolor/256x256/apps/veracrypt.xpm",
+        "install -Dm644 Setup/Linux/veracrypt.desktop /app/share/applications/veracrypt.desktop",
         "install -Dm644 /run/build/veracrypt/fr.veracrypt.VeraCrypt.metainfo.xml /app/share/metainfo/fr.veracrypt.VeraCrypt.metainfo.xml"
       ],
       "sources": [
