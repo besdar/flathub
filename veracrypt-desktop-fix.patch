@@ -1,0 +1,13 @@
+diff --git a/src/Setup/Linux/veracrypt.desktop b/src/Setup/Linux/veracrypt.desktop
+index 4504f20..c452ee7 100644
+--- a/src/Setup/Linux/veracrypt.desktop
++++ b/src/Setup/Linux/veracrypt.desktop
+@@ -4,7 +4,7 @@ Name=VeraCrypt
+ GenericName=VeraCrypt volume manager
+ Comment=Create and mount VeraCrypt encrypted volumes
+ Icon=veracrypt
+-Exec=/usr/bin/veracrypt %f
++Exec=veracrypt %f
+ Categories=Security;Utility;Filesystem
+ Keywords=encryption,filesystem
+ Terminal=false
