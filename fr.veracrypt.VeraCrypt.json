@@ -3,11 +3,15 @@
   "runtime": "org.freedesktop.Platform",
   "runtime-version": "24.08",
   "sdk": "org.freedesktop.Sdk",
+  "command": "veracrypt",
+  "rename-desktop-file": "veracrypt.desktop",
+  "rename-icon": "VeraCrypt",
   "finish-args": [
     "--socket=fallback-x11",
     "--socket=wayland",
     "--device=dri",
-    "--socket=pcsc"
+    "--socket=pcsc",
+    "--talk-name=org.freedesktop.portal.Desktop"
   ],
   "modules": [
     "shared-modules/libappindicator/libappindicator-gtk3-12.10.json",
@@ -42,11 +46,19 @@
           "WX_BUILD_DIR": "/run/build/veracrypt/wxBuildGUI"
         }
       },
+      "subdir": "src",
+      "make-install-args": [
+        "WXSTATIC=1",
+        "INDICATOR=1"
+      ],
       "build-commands": [
-        "cd src && make WXSTATIC=1 wxbuild",
-        "cd src && make WXSTATIC=1 INDICATOR=1",
-        "install -Dm644 -t /app/share/applications veracrypt/src/Setup/Linux/veracrypt.desktop",
-        "install -Dm644 fr.veracrypt.VeraCrypt.metainfo.xml /app/share/metainfo/fr.veracrypt.VeraCrypt.metainfo.xml"
+        "make WXSTATIC=1 wxbuild",
+        "make WXSTATIC=1 INDICATOR=1",
+        "install -Dm755 Main/veracrypt /app/bin/veracrypt",
+        "install -Dm644 Setup/Linux/veracrypt.desktop /app/share/applications/veracrypt.desktop",
+        "mkdir -p /app/share/icons/hicolor/scalable/apps",
+        "install -Dm644 Common/VeraCrypt.ico /app/share/icons/hicolor/scalable/apps/VeraCrypt.ico",
+        "install -Dm644 ../fr.veracrypt.VeraCrypt.metainfo.xml /app/share/metainfo/fr.veracrypt.VeraCrypt.metainfo.xml"
       ],
       "sources": [
         {
