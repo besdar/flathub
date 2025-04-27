@@ -11,7 +11,6 @@
     "--socket=wayland",
     "--device=dri",
     "--socket=pcsc",
-    "--talk-name=org.freedesktop.portal.Desktop",
     "--filesystem=home"
   ],
   "modules": [
@@ -78,6 +77,10 @@
         {
           "type": "file",
           "path": "fr.veracrypt.VeraCrypt.metainfo.xml"
+        },
+        {
+          "type": "file",
+          "path": "fr.veracrypt.VeraCrypt.svg"
         },
         {
           "type": "archive",
