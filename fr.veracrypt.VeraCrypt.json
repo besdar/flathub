@@ -11,7 +11,8 @@
     "--socket=wayland",
     "--device=dri",
     "--socket=pcsc",
-    "--talk-name=org.freedesktop.portal.Desktop"
+    "--talk-name=org.freedesktop.portal.Desktop",
+    "--filesystem=home"
   ],
   "modules": [
     "shared-modules/libappindicator/libappindicator-gtk3-12.10.json",
@@ -55,8 +56,8 @@
         "make WXSTATIC=1 wxbuild",
         "make WXSTATIC=1 INDICATOR=1",
         "install -Dm755 Main/veracrypt /app/bin/veracrypt",
-        "mkdir -p /app/share/icons/hicolor/256x256/scalable/apps",
-        "install -Dm644 Resources/Icons/VeraCrypt-256x256.xpm /app/share/icons/hicolor/256x256/apps/veracrypt.xpm",
+        "mkdir -p /app/share/icons/hicolor/scalable/apps",
+        "install -Dm644 /run/build/veracrypt/veracrypt-logo.svg /app/share/icons/hicolor/scalable/apps/veracrypt.svg",
         "install -Dm644 Setup/Linux/veracrypt.desktop /app/share/applications/veracrypt.desktop",
         "install -Dm644 /run/build/veracrypt/fr.veracrypt.VeraCrypt.metainfo.xml /app/share/metainfo/fr.veracrypt.VeraCrypt.metainfo.xml"
       ],
@@ -71,7 +72,7 @@
           }
         },
         {
-          "type": "path",
+          "type": "patch",
           "path": "veracrypt-desktop-fix.patch"
         },
         {

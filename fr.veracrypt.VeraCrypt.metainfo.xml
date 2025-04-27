@@ -1,28 +1,91 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <component type="desktop-application">
   <id>fr.veracrypt.VeraCrypt</id>
-  
+
   <name>VeraCrypt</name>
-  <summary>Disk encryption with strong security based on TrueCrypt</summary>
-  
-  <metadata_license>MIT</metadata_license>
-  <project_license>VeraCrypt License, Apache-2.0, License agreement for Encryption for the Masses, TrueCrypt License Version 3.0</project_license>
-  
-  <supports>
-    <control>pointing</control>
-    <control>keyboard</control>
-    <control>touch</control>
-  </supports>
-  
+  <summary>A free open source disk encryption software for Windows, Mac OSX and Linux. Brought to
+    you by IDRIX and based on TrueCrypt.</summary>
+
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>Apache-2.0 AND TrueCrypt-3.0</project_license>
+
   <description>
     <p>
-      VeraCrypt is a software for establishing and maintaining an on-the-fly-encrypted volume (data storage device). On-the-fly encryption means that data is automatically encrypted right before it is saved and decrypted right after it is loaded, without any user intervention. No data stored on an encrypted volume can be read (decrypted) without using the correct password/keyfile(s) or correct encryption keys. Entire file system is encrypted (e.g., file names, folder names, contents of every file, free space, meta data, etc). Files can be copied to and from a mounted VeraCrypt volume just like they are copied to/from any normal disk (for example, by simple drag-and-drop operations). Files are automatically being decrypted on the fly (in memory/RAM) while they are being read or copied from an encrypted VeraCrypt volume. Similarly, files that are being written or copied to the VeraCrypt volume are automatically being encrypted on the fly (right before they are written to the disk) in RAM. Note that this does not mean that the whole file that is to be encrypted/decrypted must be stored in RAM before it can be encrypted/decrypted. There are no extra memory (RAM) requirements for VeraCrypt. For an illustration of how this is accomplished, see the following paragraph.
+      VeraCrypt main features:
     </p>
-    <p>
-      Let&apos;s suppose that there is an .avi video file stored on a VeraCrypt volume (therefore, the video file is entirely encrypted). The user provides the correct password (and/or keyfile) and mounts (opens) the VeraCrypt volume. When the user double clicks the icon of the video file, the operating system launches the application associated with the file type – typically a media player. The media player then begins loading a small initial portion of the video file from the VeraCrypt-encrypted volume to RAM (memory) in order to play it. While the portion is being loaded, VeraCrypt is automatically decrypting it (in RAM). The decrypted portion of the video (stored in RAM) is then played by the media player. While this portion is being played, the media player begins loading another small portion of the video file from the VeraCrypt-encrypted volume to RAM (memory) and the process repeats. This process is called on-the-fly encryption/decryption and it works for all file types (not only for video files).
-    </p>
-    <p>
-      Note that VeraCrypt never saves any decrypted data to a disk – it only stores them temporarily in RAM (memory). Even when the volume is mounted, data stored in the volume is still encrypted. When you restart your system or turn off your computer, the volume will be dismounted and files stored in it will be inaccessible (and encrypted). Even when power supply is suddenly interrupted (without proper system shut down), files stored in the volume are inaccessible (and encrypted). To make them accessible again, you have to mount the volume (and provide the correct password and/or keyfile).
-    </p>
+    <ul>
+      <li>Creates a <b>virtual encrypted disk</b> within a file and mounts it as a real disk. </li>
+      <li>Encrypts an<b> entire partition or storage device</b> such as USB flash drive or hard
+        drive.</li>
+      <li>Encrypts a <b>partition or drive where Windows is installed</b> (pre-boot authentication).</li>
+      <li>Encryption is <b>automatic</b>, <b>real-time</b>(on-the-fly) and <b>transparent</b>.</li>
+      <li>Parallelization and pipelining allow data to be read and written as fast as if the drive
+        was not encrypted.</li>
+      <li>Encryption can be hardware-accelerated on modern processors.</li>
+      <li>Provides <b>plausible deniability</b>, in case an adversary forces you to reveal the
+        password: <b>Hidden volume</b> (steganography) and <b>hidden operating system</b>.</li>
+    </ul>
   </description>
+
+  <launchable type="desktop-id">fr.veracrypt.VeraCrypt.desktop</launchable>
+  <screenshots>
+    <screenshot type="default">
+      <image>https://veracrypt.fr/en/Home_VeraCrypt_Encrypting_Partition.png</image>
+      <caption>VeraCrypt on the fly encrypting the system partition</caption>
+    </screenshot>
+    <screenshot>
+      <image>https://veracrypt.fr/en/Home_VeraCrypt_Creating_Volume.png</image>
+      <caption>VeraCrypt encryption options when creating an encrypted volume</caption>
+    </screenshot>
+    <screenshot>
+      <image>https://veracrypt.fr/en/Home_VeraCrypt_NonSysEncryption.png</image>
+      <caption>VeraCrypt formatting of newly created encrypted volume</caption>
+    </screenshot>
+    <screenshot>
+      <image>https://veracrypt.fr/en/Home_VeraCrypt_languages_selection.png</image>
+      <caption>Changing the GUI language of VeraCrypt</caption>
+    </screenshot>
+  </screenshots>
+
+  <categories>
+    <category>Utility</category>
+  </categories>
+
+  <keywords>
+    <keyword>encryption</keyword>
+    <keyword>encryption-algorithms</keyword>
+    <keyword>idrix</keyword>
+    <keyword>encryption-decryption</keyword>
+  </keywords>
+
+  <requires>
+    <control>keyboard</control>
+    <control>pointing</control>
+    <display_length compare="ge">768</display_length>
+  </requires>
+
+  <url type="homepage">https://veracrypt.fr/en/Home.html</url>
+  <url type="bugtracker">https://github.com/veracrypt/VeraCrypt/issues</url>
+  <url type="faq">https://veracrypt.fr/en/FAQ.html</url>
+  <url type="help">https://veracrypt.fr/en/Documentation.html</url>
+  <url type="donation">https://veracrypt.fr/en/Donation.html</url>
+  <url type="vcs-browser">https://github.com/veracrypt/VeraCrypt</url>
+  <url type="contact">https://veracrypt.fr/en/Contact.html</url>
+
+  <releases>
+    <release version="1.26.20" date="2025-02-05">
+      <url type="details">https://github.com/veracrypt/VeraCrypt/releases/tag/VeraCrypt_1.26.20</url>
+      <description>
+        <p>Changes between 1.26.18 and 1.26.20</p>
+        <ul>
+          <li>Implement SHA-256 acceleration on ARM64 platforms using CPU instructions.</li>
+          <li>Update translations.</li>
+          <li>Replace "Dismount" with "Unmount" across the UI and documentation to align with IT
+            standards (GH #1478)</li>
+          <li>Fix a regression in Linux Mint affecting administrator password authentication. (GH
+            #1473)</li>
+        </ul>
+      </description>
+    </release>
+  </releases>
 </component>
