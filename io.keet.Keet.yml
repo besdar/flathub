@@ -1,9 +1,9 @@
 app-id: io.keet.Keet
-"base": "org.electronjs.Electron2.BaseApp"
-"base-version": "25.08"
-"runtime": "org.freedesktop.Platform"
-"runtime-version": "25.08"
-sdk: org.gnome.Sdk
+base: org.electronjs.Electron2.BaseApp
+base-version: '25.08'
+runtime: org.freedesktop.Platform
+runtime-version: '25.08'
+sdk: org.freedesktop.Sdk
 command: keet
 
 finish-args:
@@ -54,6 +54,7 @@ modules:
         filename: keet.tar.gz
         url: https://static.keet.io/downloads/2.6.0/Keet-x64.tar.gz
         sha256: c168a182563bf7745681b82664e93782d9f10d23166ec48d2652e6cbe65d479e
+        size: 23978555
         x-checker-data:
           type: html
           url: https://static.keet.io/downloads/
@@ -65,6 +66,7 @@ modules:
         filename: keet.tar.gz
         url: https://static.keet.io/downloads/2.6.0/Keet-arm64.tar.gz
         sha256: cb428106e77f8194e12fde16591faae5752f43b6c3aa9dcbe19630c0d6c98dba
+        size: 23505967
         x-checker-data:
           type: html
           url: https://static.keet.io/downloads/
