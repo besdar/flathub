@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>io.keet.Keet</id>
+  <metadata_license>FSFAP</metadata_license>
+  <project_license>LicenseRef-proprietary</project_license>
+  <name>Keet</name>
+  <summary>Peer-to-Peer encrypted text and video chat</summary>
+  
+  <description>
+    <p>This is a community package of Keet and not officially supported by Holepunch.</p>
+    <p>
+      Keet is a zero-server, peer-to-peer chat and video conferencing application.
+      Every message, call, and file transfer on Keet is end-to-end encrypted and
+      directly exchanged between participants.
+    </p>
+    <p>
+      Powered by the innovative open-source Pear Runtime technology stack, Keet
+      prioritizes privacy. No middlemen, no metadata harvesting, and no surveillance.
+      No phone number or email is required to start chatting.
+    </p>
+  </description>
+
+  <launchable type="desktop-id">io.keet.Keet.desktop</launchable>
+  <developer_name>Holepunch</developer_name>
+  <url type="homepage">https://keet.io/</url>
+  <url type="help">https://support.keet.io/</url>
+  <url type="contact">https://support.keet.io/</url>
+
+  <screenshots>
+    <screenshot type="default">
+      <caption>Keet desktop application</caption>
+      <image type="source">https://keet.io/assets/connected_desktop.webp</image>
+    </screenshot>
+  </screenshots>
+
+  <content_rating type="oars-1.1" />
+
+  <releases>
+    <release version="2.6.0" date="2026-02-05"/>
+  </releases>
+</component>

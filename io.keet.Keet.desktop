@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Keet
+Comment=Peer-to-Peer encrypted text & video chat
+Exec=keet-wrapper.sh %U
+Icon=io.keet.Keet
+Terminal=false
+Categories=Network;InstantMessaging;Chat;VideoConference;
+StartupWMClass=keet
+MimeType=x-scheme-handler/keet;
