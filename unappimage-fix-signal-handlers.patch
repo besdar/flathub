@@ -1,0 +1,23 @@
+diff --git a/squashfs-tools/unsquashfs.c b/squashfs-tools/unsquashfs.c
+index 1234567..abcdefg 100644
+--- a/squashfs-tools/unsquashfs.c
++++ b/squashfs-tools/unsquashfs.c
+@@ -139,7 +139,7 @@ int progress = TRUE, info = FALSE, force = FALSE;
+ int rotate = 0;
+ pthread_t progress_thread;
+ 
+-void sigwinch_handler()
++void sigwinch_handler(int sig)
+ {
+ 	struct winsize winsize;
+ 
+@@ -153,7 +153,7 @@ void sigwinch_handler()
+ }
+ 
+ 
+-void sigalrm_handler()
++void sigalrm_handler(int sig)
+ {
+ 	rotate = (rotate + 1) % 4;
+ }
+

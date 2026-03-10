@@ -48,6 +48,8 @@ modules:
         path: io.keet.Keet.metainfo.xml
       - type: file
         path: io.keet.Keet.svg
+      - type: file
+        path: apply_extra.sh
 
       - type: extra-data
         only-arches: [x86_64]
