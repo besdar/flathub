@@ -22,11 +22,13 @@ modules:
   - name: unappimage
     buildsystem: simple
     build-commands:
-      - make -C squashfs-tools install INSTALL_DIR=/app/bin
+      - make -C squashfs-tools install INSTALL_DIR=/app/bin ZSTD_SUPPORT=1 LIBS="-lzstd -lz -lelf -lm"
     sources:
       - type: git
         url: https://github.com/refi64/unappimage
         commit: d7f86f2a0d7ec3a69211125207d5f127386b849a
+      - type: patch
+        path: unappimage-fix-signal-handlers.patch
 
   - name: keet
     buildsystem: simple
@@ -40,7 +42,7 @@ modules:
       - type: script
         dest-filename: keet
         commands:
-          - zypak-wrapper.sh /app/extra/keet/keet --ozone-platform-hint=auto --enable-features=WaylandWindowDecorations "$@"
+          - zypak-wrapper.sh /app/extra/keet/usr/bin/keet --ozone-platform-hint=auto --enable-features=WaylandWindowDecorations "$@"
 
       - type: file
         path: io.keet.Keet.desktop
